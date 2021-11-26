@@ -38,5 +38,3 @@ export class TimerModule extends Module {
 	}
 }
 
-const timer = new TimerModule();
-timer.trigger();
