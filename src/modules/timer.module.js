@@ -92,15 +92,16 @@ export class TimerModule extends Module {
 			}
 			else {
 				clearInterval(myTimer);
-				timerBlock.style.display = "none";
 				this.#openMessage();
-				setTimeout(() => { this.#closeMessage(); }, 2000);
+				setTimeout(() => {
+					this.#closeMessage();
+					timerBlock.style.display = "none";
+				}, 2000);
 			}
 
 		}, 1000);
 	}
 }
-
 
 
 
