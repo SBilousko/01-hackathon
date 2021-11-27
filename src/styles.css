@@ -51,10 +51,14 @@ body {
 	width: 100%; 
 	height: 100%; 
 	background-color: rgba(0, 0, 0, 0.18);
+	transition: all .2s ease-in;
+	transition-timing-function: ease-in;
  }
 
+
+
  .modal-content {
-	background-image: #fff;
+	background-color: white; 
 	background-image: url("./assets/bc3.jpg");
 	background-position: auto;
 	background-repeat:no-repeat;

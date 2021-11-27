@@ -42,7 +42,20 @@ export class TimerModule extends Module {
 		messageBlock.style.display = "none";
 	}
 
+	#soundClock() {
+		let audio = new Audio('../assets/sound/clock.mp3');
+		audio.load();
+		audio.play()
+			.then(() => {
+				// Audio is playing.
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	}
+
 	#openTimer(s) {
+		// this.#soundClock();
 		let timeInSeconds = s;
 		let min = 0; let sec = 0;
 		const timerBlock = document.querySelector("#myTimer");
@@ -87,6 +100,7 @@ export class TimerModule extends Module {
 		}, 1000);
 	}
 }
-const timer = new TimerModule();
-timer.trigger();
+
+
+
 
