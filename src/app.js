@@ -26,8 +26,22 @@ menu.add([backgroundModuleHTML, clicksModuleHTML, shapeModuleHTML]);
 
 document.body.addEventListener("contextmenu", (event) => {
   event.preventDefault();
-  console.log(event.pageX, event.pageY);
-  menu.el.style.top = `${event.pageY}px`;
-  menu.el.style.left = `${event.pageX}px`;
+  const positionX = event.pageX;
+  const positionY = event.pageY;
+  const documentHeight = document.documentElement.clientHeight;
+  const documentWidth = document.documentElement.clientWidth;
   menu.open();
+  const menuHeight = menu.el.offsetHeight;
+  const menuWidth = menu.el.offsetWidth;
+  if (documentHeight - positionY < menuHeight) {
+    menu.el.style.top = `${positionY - menuHeight}px`;
+  } else {
+    menu.el.style.top = `${positionY}px`;
+  }
+
+  if (documentWidth - positionX < menuWidth) {
+    menu.el.style.left = `${positionX - menuWidth}px`;
+  } else {
+    menu.el.style.left = `${positionX}px`;
+  }
 });
