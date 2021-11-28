@@ -2,8 +2,8 @@ import { setInterval } from "core-js";
 import { Module } from "../core/module";
 
 export class TimerModule extends Module {
-	constructor() {
-		super("Таймер", "Таймер отсчета");
+	constructor(type, text) {
+		super(type, text);
 	}
 	trigger() {
 		const modalBlock = document.querySelector("#myModal");

@@ -3,29 +3,33 @@ import { ContextMenu } from "./menu";
 import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { ShapeModule } from "./modules/shape.module";
-import {LetteringModule} from './modules/lettering.module.js'
+import { LetteringModule } from "./modules/lettering.module.js";
+import { TimerModule } from "./modules/timer.module";
 
-let ramdomLettering = new LetteringModule('is', 'ramdomLettering');
-ramdomLettering.trigger();
 const menu = new ContextMenu(".menu");
-const backgroundModule = new BackgroundModule(
-  "background-changer",
-  "Поменять цвет фона"
-);
+
 const clicksModule = new ClicksModule(
   "clicks-analyzer",
   "Считать клики (за 5 секунд)"
 );
-const shapeModule = new ShapeModule(
-  "random-shape",
-  "Создать фигуру"
+const shapeModule = new ShapeModule();
+const ramdomLettering = new LetteringModule(
+  "random-letter",
+  "Показать случайное слово"
 );
-shapeModule.addFigure()
-const backgroundModuleHTML = backgroundModule.toHTML();
+const timerModule = new TimerModule("timer-module", "Таймер отсчета");
+shapeModule.addFigure();
 const clicksModuleHTML = clicksModule.toHTML();
 const shapeModuleHTML = shapeModule.toHTML();
+const timerModuleHTML = timerModule.toHTML();
+const ramdomLetteringHTML = ramdomLettering.toHTML();
 
-menu.add([backgroundModuleHTML, clicksModuleHTML, shapeModuleHTML]);
+menu.add([
+  clicksModuleHTML,
+  shapeModuleHTML,
+  timerModuleHTML,
+  ramdomLetteringHTML,
+]);
 
 document.body.addEventListener("contextmenu", (event) => {
   event.preventDefault();
@@ -47,4 +51,17 @@ document.body.addEventListener("contextmenu", (event) => {
   } else {
     menu.el.style.left = `${positionX}px`;
   }
+
+  const menuItems = document.querySelectorAll(".menu-item");
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener("click", (event) => {
+      console.log(event.target.getAttribute("data-type"));
+      if (event.target.getAttribute("data-type") == "timer-module") {
+        timerModule.trigger();
+      } 
+      if (event.target.getAttribute("data-type") == "random-letter") {
+        ramdomLettering.trigger();
+      }
+    });
+  });
 });
