@@ -1,12 +1,11 @@
 import {Module} from '../core/module'
 
 export class LetteringClass extends Module {
+    trigger() {
         const letteringsArr = ["JavaScript", "Node.js", "React", "Angular", "HTML", "CSS", "jQuery", "Vue.js"];
         const stylesArr = ["textStyle1", "textStyle2", "textStyle3", "textStyle4", "textStyle5"];
-
         const WIDTH = 900;
         const HEIGHT = 800;
-
         const dataArr = randomCount();
         screenText = create(dataArr);
 
@@ -15,7 +14,7 @@ export class LetteringClass extends Module {
             console.log(screenText);
             deleteTextSpan(screenText)
             screenText = create(dataArr);
-        }, 1000);
+        }, 5000);
 
         function randomCount() {
             let textStyle = Math.floor(Math.random() * stylesArr.length);
@@ -29,6 +28,7 @@ export class LetteringClass extends Module {
         }
         function create(randomArr) {
             const textSpan = document.createElement('span');
+
             textSpan.textContent = letteringsArr[randomArr[1]];
             textSpan.classList.add(`${stylesArr[randomArr[0]]}`);
             textSpan.style.top = randomArr[3] + "px";
@@ -42,5 +42,5 @@ export class LetteringClass extends Module {
         }
 
 
-            }
+    }
 }
