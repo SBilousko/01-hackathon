@@ -7,13 +7,13 @@ export class LetteringClass extends Module {
         const WIDTH = 900;
         const HEIGHT = 800;
         const dataArr = randomCount();
-        screenText = create(dataArr);
+        let screenText = create(dataArr);
 
         setInterval(() => {
             const dataArr = randomCount();
             console.log(screenText);
             deleteTextSpan(screenText)
-            screenText = create(dataArr);
+            let screenText = create(dataArr);
         }, 5000);
 
         function randomCount() {
