@@ -1,15 +1,50 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
   <title>Context Menu</title>
+
 </head>
+
 <body>
 
-<ul class="menu" id="menu"></ul>
+	<ul class="menu" id="menu"></ul>
 
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close" id="closeModal">&times;</span>
+			<h2>Установите время на таймере</h2>
+			<div class="timer-button-container">
+				<button class="button-for-timer" data-second="10">10sec</button>
+				<button class="button-for-timer" data-second="30">30sec</button>
+				<button class="button-for-timer" data-second="60">1min</button>
+				<button class="button-for-timer" data-second="120">2min</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="myMessage" class="message hidden">
+		<div class="modal-content">
+			<span class="close" id="closeModal">&times;</span>
+			<div class="message-container">
+				<h3>Время истекло</h3>
+			</div>
+		</div>
+	</div>
+
+	<div id="myTimer">
+		<div class="timer-block">
+			<div class="time-block" id="minute">00</div>
+			<div class="time-block" id="second">00</div>
+			<div class="time-block" id="ds">00</div>
+		</div>
+	</div>
 </body>
+
 </html>
