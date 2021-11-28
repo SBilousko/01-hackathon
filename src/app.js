@@ -3,7 +3,10 @@ import { ContextMenu } from "./menu";
 import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { ShapeModule } from "./modules/shape.module";
+import {LetteringModule} from './modules/lettering.module.js'
 
+let ramdomLettering = new LetteringModule('is', 'ramdomLettering');
+ramdomLettering.trigger();
 const menu = new ContextMenu(".menu");
 const backgroundModule = new BackgroundModule(
   "background-changer",
