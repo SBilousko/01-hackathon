@@ -40,3 +40,131 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+#myModal, #myMessage {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	background-color: rgba(0, 0, 0, 0.18);
+	transition: all .2s ease-in;
+	transition-timing-function: ease-in;
+ }
+
+
+
+ .modal-content {
+	background-color: white; 
+	background-image: url("./assets/bc3.jpg");
+	background-position: auto;
+	background-repeat:no-repeat;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	width: 400px;
+	height: 130px;
+	box-shadow: 5px 10px 20px 10px #575757;
+ }
+
+ .close {
+	color: rgb(248, 37, 37);
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+ }
+ 
+ .close:hover,
+ .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+ }
+
+ .set-timer-time{
+	 display: flex;
+ }
+
+ .button-for-timer {
+	background-color: white; 
+	color: #0970ff; 
+	border: 2px solid #afafaf;
+	border-radius: 50%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	width: 50px;
+	height: 50px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+
+ }
+ 
+ .button-for-timer:hover {
+	background-color: #2c84ff;
+	color: #d6e7ff;
+ }
+
+ .timer-button-container, .message-container{
+	 margin-top: 10px;
+	 display: flex;
+	 justify-content: space-around;
+ }
+
+ .modal-content > h2{
+	 margin-top: 5px;
+	 font-family: "Calibri Light", Helvetica, sans-serif;
+	 font-size: 18px;
+ }
+
+ .message-container > h3 {
+	font-family: "Calibri Light", Helvetica, sans-serif;
+	 color: crimson;
+	 margin-top: 20px;
+	 font-size: 25px;
+ }
+
+ #myTimer{
+	background-image: url("./assets/clock3.jpg");
+	background-position: left top;
+	background-size: cover;
+	display: none;
+	position:fixed;
+	text-align: center;
+	left: 10px;
+	top: 10px;
+	width: 300px;
+	border: 1px solid #888;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 5px 10px 20px 10px #adadad;
+}
+
+.timer-block{
+	margin: 30px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.time-block{
+	border: 1px solid gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+	color: black;
+	background-color: white;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 20px;
+}
+
