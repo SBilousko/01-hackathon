@@ -40,3 +40,59 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.textStyle1 {
+    position: relative;
+      font-size: 50px;
+      font-weight: normal;
+      cursor: pointer;
+      text-shadow: 0 0 15px #999;
+      color: transparent;
+      transition: all 1s;
+    }
+  .textStyle1:hover {
+      text-shadow: 0 0 0 #333;
+    }
+  .textStyle2{
+      position: relative;
+      font-size: 50px;
+  }
+  .textStyle3{
+      position: relative;
+      padding: 50px 20px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 3em;
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
+      display: inline-block;
+      background: #FFE6DB;
+      color: #FFE6DB;
+      letter-spacing: .1em;
+      text-shadow: 3px 0 rgba(250, 111, 142, .5), 6px 0 rgba(250, 111, 142, .4), 9px 0 rgba(250, 111, 142, .3), 12px 0 rgba(250, 111, 142, .2), 15px 0 rgba(250, 111, 142, .1);
+  }
+  .textStyle4 {
+    position: relative;
+      animation: flicker 3s infinite;
+    }
+      @keyframes flicker {
+        from { opacity: 1;}
+        to { opacity: 0;}
+      }
+  .textStyle5 {
+      position: relative;
+      padding: 50px 20px;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 3em;
+      font-weight: normal;
+      line-height: 1;
+      margin: 0;
+      display: inline-block;
+      background: #E02A91;
+      color: white;
+      text-shadow: 2px 2px black, 4px 4px white, 6px 6px black, 8px 8px white, 10px 10px black, 12px 12px white, 14px 14px black, 16px 16px white, 18px 18px black, 20px 20px white, 22px 22px black, 24px 24px white, 26px 26px black;
+  }
+  
+  
