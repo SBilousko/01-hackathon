@@ -1,6 +1,5 @@
 import "./styles.css";
 import { ContextMenu } from "./menu";
-import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
 import { ShapeModule } from "./modules/shape.module";
 import { LetteringModule } from "./modules/lettering.module.js";
@@ -8,10 +7,8 @@ import { TimerModule } from "./modules/timer.module";
 
 const menu = new ContextMenu(".menu");
 
-const clicksModule = new ClicksModule(
-  "clicks-analyzer",
-  "Считать клики (за 5 секунд)"
-);
+const clicksModule = new ClicksModule();
+
 const shapeModule = new ShapeModule();
 const ramdomLettering = new LetteringModule(
   "random-letter",
@@ -58,10 +55,14 @@ document.body.addEventListener("contextmenu", (event) => {
       console.log(event.target.getAttribute("data-type"));
       if (event.target.getAttribute("data-type") == "timer-module") {
         timerModule.trigger();
-      } 
+      }
       if (event.target.getAttribute("data-type") == "random-letter") {
         ramdomLettering.trigger();
       }
+      if (event.target.getAttribute("data-type") == "clicks-analyzer") {
+        clicksModule.render();
+        clicksModule.start();
+      } 
     });
   });
 });
